@@ -1,37 +1,38 @@
-const { UUIDV4, Model, DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Activity extends Model {}
+class Interest extends Model { }
 
-Activity.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
+Interest.init(
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        interest_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        interest_detail: {
+            type: DataTypes.TEXT,
+        },
+        user_int_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'user',
+              key: 'id',
+            },
+          },
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    // This column will store a reference of the `id` of the `User` that owns this Activity
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        // This references the `user` model, which we set in `User.js` as its `modelName` property
-        model: 'user',
-        key: 'id',
-      },
-    },
-  },
-  {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'activity',
-  }
-);
+    {
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'interest',
+    }
+)
 
-module.exports = Activity;
+module.exports = Interest;
+>>>>>>> 2978ce0fe567b3ec691b91f28ff3ab4c0c55f2b0
