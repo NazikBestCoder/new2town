@@ -35,6 +35,14 @@ User.init(
         len: [6],
       },
     },
+    
+    friends: {
+      type: DataTypes.ARRAY(DataTypes.INTEGER),
+      references: {
+        model: "user",
+        key: "id"
+      }
+    }
   },
   {
     hooks: {
