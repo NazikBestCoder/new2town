@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS newtown_db;
+
+CREATE DATABASE newtown_db;
