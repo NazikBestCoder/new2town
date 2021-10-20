@@ -11,14 +11,14 @@ Interest.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        interest_name: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        interest_detail: {
+        detail: {
             type: DataTypes.TEXT,
         },
-        user_int_id: {
+        user_id: {
             type: DataTypes.INTEGER,
             references: {
               model: 'user',

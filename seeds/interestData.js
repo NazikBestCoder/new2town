@@ -2,8 +2,8 @@ const { Interest } = require('../models');
 
 const interests = [
     {
-        interest_name: 'movies',
-        interest_detail: 'I like indie movies best.',
+        name: 'movies',
+        detail: "I'm a big fan of film.",
     }
 ];
 
