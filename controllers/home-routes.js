@@ -19,18 +19,22 @@ router.get('/', async (req, res) =>{
       } 
 })
 
-router.get('/search', async (req, res) =>{
+router.get('/search/:act', async (req, res) =>{
   try {
-      const currentUserData = await User.findByPk(req.session.user_id);
 
-      const currentUser = currentUserData.get({ plain: true });
+      console.log(req.params.act);
+
+      // const currentUserData = await User.findByPk(req.session.user_id);
+
+      // const currentUser = currentUserData.get({ plain: true });
 
       const userData = await User.findAll();
       
       const userAll = userData.map((user) => user.get({ plain: true }));
 
-      res.render('home', {
-      });
+      console.log(userAll);
+
+      res.status(200).json(userAll);
   
   } catch (err) {
       console.log(err);
