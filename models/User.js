@@ -36,13 +36,13 @@ User.init(
       },
     },
     
-    friends: {
-      type: DataTypes.ARRAY(DataTypes.INTEGER),
-      references: {
-        model: "user",
-        key: "id"
-      }
-    }
+    // friends: {
+    //   type: DataTypes.ARRAY(DataTypes.INTEGER),
+    //   references: {
+    //     model: "user",
+    //     key: "id"
+    //   }
+    // }
   },
   {
     hooks: {
