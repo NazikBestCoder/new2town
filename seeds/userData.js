@@ -10,6 +10,7 @@ const users = [
         username: 'Joey',
         email: 'test2@test.com',
         password: 'pass123',
+<<<<<<< HEAD
         friend_id: '1'  
     },
     {
@@ -23,6 +24,18 @@ const users = [
         email: 'test4@test.com',
         password: 'pass123',
         friend_id: '2'
+=======
+    },
+    {
+        username: 'Nazik',
+        email: 'test3@test.com',
+        password: 'pass123',
+    },
+    {
+        username: 'Molly',
+        email: 'test4@test.com',
+        password: 'pass123',
+>>>>>>> bfb3a66fdb9d29c5d8af3648e04fed99778ea3bd
     },
 ];
 

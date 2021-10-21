@@ -4,7 +4,7 @@ const sequelize = require('../config/connection');
 
 class UserInterest extends Model {}
 
-UserInterest .init(
+UserInterest.init(
   {
     // define columns
     id: {
