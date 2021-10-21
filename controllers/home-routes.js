@@ -8,7 +8,8 @@ router.get('/', async (req, res) =>{
         
         const userAll = userData.map((user) => user.get({ plain: true }));
         res.render('main', {userAll,
-            // logged_in: req.session.logged_in,
+            logged_in: req.session.logged_in,
+            user_id: req.session.user_id
         });
     
     } catch (err) {
@@ -16,15 +17,6 @@ router.get('/', async (req, res) =>{
         res.status(500).json(err);
       } 
 })
-
-router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-      res.redirect('/');
-      return;
-    }
-  
-    res.render('login');
-  });
 
 
 module.exports = router;
