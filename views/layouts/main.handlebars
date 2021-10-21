@@ -13,10 +13,10 @@
             <a href="/" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Home</a>
             {{#if logged_in}}
             <a href="/profile" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Profile</a>
-            <a href="/friends" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Friends List</a>
+            <a href="/friendslist" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Friends List</a>
             <button id="logout" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Logout</button>
             {{else}}
-            <a id="/login" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Login</a>
+            <a href="/login" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Login</a>
             {{/if}}
         </nav>
 
