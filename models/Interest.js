@@ -35,3 +35,4 @@ Interest.init(
 )
 
 module.exports = Interest;
+

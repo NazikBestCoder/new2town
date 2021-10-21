@@ -1,8 +1,11 @@
 const router = require('express').Router();
 const { User, Interest, Activity } = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) =>{
     try {
+
+
         res.render('profile');
     
     } catch (err) {
@@ -10,5 +13,7 @@ router.get('/', async (req, res) =>{
         res.status(500).json(err);
       } 
 })
+
+
 
 module.exports = router;
