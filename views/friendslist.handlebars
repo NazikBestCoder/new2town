@@ -1,18 +1,20 @@
-<div>
-<h2>Friends List</h2>
+<div class="w-full h-full flex justify-center">
+<h2>Friends List:</h2>
 {{#each friendAll as |friend|}}
-<div>
-<p>
-{{friend.username}}
-</p>
-</div>
+
+          <a href="/profile/${gottenUsers[i].id}"> <div class="card border-black border-2 rounded-lg inline-block w-52 h-64 mx-5">
+       <div class="container">
+           <h4><b>{{friend.username}}</b></h4>
+           <p>Interests: film, cooking, politics</p>
+      </div> </div> </a>
+       
 {{/each}}
 
 </div>
 
-            <button id="logout" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Logout</button>
+            {{!-- <button id="logout" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Logout</button>
 
                {{#if logged_in}}
     <script src="/js/logout.js"></script>
-    {{/if}}
-    
+    {{!-- {{/if}} --
+     --}}
