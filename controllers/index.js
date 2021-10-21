@@ -9,7 +9,7 @@ const signupRoutes = require('./signup-routes');
 
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
-router.use('/friends', friendsListRoutes);
+router.use('/friendslist', friendsListRoutes);
 router.use('/login', loginRoutes);
 router.use('/profile', profileRoutes);
 router.use('/signup', signupRoutes);
