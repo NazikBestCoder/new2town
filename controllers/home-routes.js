@@ -4,10 +4,11 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) =>{
     try {
-        const userData = await User.findAll();
+        // const userData = await User.findAll();
         
-        const userAll = userData.map((user) => user.get({ plain: true }));
-        res.render('main', {userAll,
+        // const userAll = userData.map((user) => user.get({ plain: true }));
+
+        res.render('home', {
             logged_in: req.session.logged_in,
             user_id: req.session.user_id
         });
@@ -16,6 +17,25 @@ router.get('/', async (req, res) =>{
         console.log(err);
         res.status(500).json(err);
       } 
+})
+
+router.get('/search', async (req, res) =>{
+  try {
+      const currentUserData = await User.findByPk(req.session.user_id);
+
+      const currentUser = currentUserData.get({ plain: true });
+
+      const userData = await User.findAll();
+      
+      const userAll = userData.map((user) => user.get({ plain: true }));
+
+      res.render('home', {
+      });
+  
+  } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    } 
 })
 
 

@@ -1,10 +1,10 @@
 <div>
-    <div>
-        <h2>Login</h2>
+    <div class="container mx-auto">
+        <h2 class="text-3xl p-8">Login</h2>
 
         <form>
             <div>
-                <label for="email-login">Email:</label>
+                <label for="username-login">Username:</label>
                 <input type="text"/>
             </div>
             <div>
@@ -16,24 +16,28 @@
             </div>
         </form>
     </div>
-    <div>
-        <h2>Sign Up</h2>
+    <div class="container mx-auto">
+        <h2 class="text-3xl p-8">Sign Up</h2>
 
         <form class="form signup-form">
             <div class="form-group">
-                <label for="name-signup">name:</label>
+                <label for="name-signup">Name:</label>
                 <input class="form-input" type="text" id="name-signup" />
             </div>
             <div class="form-group">
-                <label for="email-signup">email:</label>
-                <input class="form-input" type="text" id="email-signup" />
+                <label for="username-signup" class="pt-8">Username:</label>
+                <input class="form-input" type="text" id="username-signup" />
             </div>
             <div class="form-group">
-                <label for="password-signup">password:</label>
+                <label for="password-signup">Password:</label>
                 <input class="form-input" type="password" id="password-signup" />
             </div>
+            <div class="form-group">
+                <label for="interest-signup">Interests:</label>
+                <input class="form-input" type="text" id="interest-signup" />
+            </div>
             <div>
-                <label for="activities">Activities:</label>
+                <label for="activities-signup">Activities:</label>
                 <input type="checkbox" name="restaurant" value="Stuff Your Face">
                 <label for="restaurant"> Stuff Your Face</label><br>
                 <input type="checkbox" name="drinking" value="Get schwasted">
