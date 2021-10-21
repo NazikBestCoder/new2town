@@ -16,9 +16,6 @@ router.get('/', withAuth, async (req, res) => {
         console.log(friendData)
         const friendAll = friendData.map((friend) => friend.get({ plain: true }));
 
-        // res.render('friendslist', {friendAll} )
-    
-
         res.render('friendslist', {friendAll,
             logged_in: req.session.logged_in,
         });
@@ -28,6 +25,8 @@ router.get('/', withAuth, async (req, res) => {
         res.status(500).json(err);
       } 
 });
+
+
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {

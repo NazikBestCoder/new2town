@@ -12,7 +12,7 @@
         <nav class="left-0 mb-3 flex md:flex-nowrap lg: flex-wrap">
             <a href="/" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Home</a>
             {{#if logged_in}}
-            <a href="/profile" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Profile</a>
+            <a href="/profile/{{user_id}}" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Profile</a>
             <a href="/friendslist" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Friends List</a>
             <button id="logout" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Logout</button>
             {{else}}
