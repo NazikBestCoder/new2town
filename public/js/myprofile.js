@@ -1,4 +1,4 @@
-// working on myprofile.js model, added this to have sth on file (nazik)
+// working on myprofile.js in public, added this to have sth on file (nazik)
 document
   .querySelector('.new-project-form')
   .addEventListener('submit', newFormHandler);
