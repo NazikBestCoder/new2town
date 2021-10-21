@@ -7,6 +7,12 @@ const activities = [
     {
         name: 'Get Shwasted!'
     },
+    {
+        name: 'Walk around Trees!'
+    },
+    {
+        name: 'Get Competitive!'
+    },
 ];
 
 const seedActivities = () => Activity.bulkCreate(activities);
