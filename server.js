@@ -8,7 +8,7 @@ const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-var mustacheExpress = require('mustache-express');
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -35,15 +35,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
-// Middleware
-app.engine('html', mustacheExpress());
-app.set('view engine', 'mustache');
-app.use('/public', express.static('public'));
 
-// Routes
-app.get('/', function(req, res) {
-  res.render('index.html');
-});
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
