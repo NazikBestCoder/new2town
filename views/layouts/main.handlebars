@@ -14,6 +14,7 @@
             {{#if logged_in}}
             <a href="/profile" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Profile</a>
             <a href="/friends" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Friends List</a>
+            <a href="/logout" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Logout</a>
             {{else}}
             <a href="/login" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Login</a>
             {{/if}}
@@ -28,12 +29,12 @@
     </main>
 
     <footer class="bg-green-200 h-8 w-screen bottom-0">
-        <h1 class="font-bold text-blue-50 text-xl text-center">New2Town</h1>
+        <h1 class="font-bold text-blue-50 text-xl text-center">New2Town</h1> 
     </footer>
 
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
     
-</body>
+</body> 
 </html>
