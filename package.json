@@ -28,7 +28,10 @@
     "express-handlebars": "^5.3.4",
     "express-session": "^1.17.2",
     "mysql2": "^2.3.2",
-    "sequelize": "^6.7.0"
+    "sequelize": "^6.7.0",
+    "mustache-express": "^1.2.4",
+    "nodemon": "^1.11.0",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.7",
