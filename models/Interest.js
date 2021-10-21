@@ -34,9 +34,5 @@ Interest.init(
     }
 )
 
-<<<<<<< HEAD
 module.exports = Interest;
 
-=======
-module.exports = Interest;
->>>>>>> 39d025a05917985d5fd77518ba76abf5e140a842
