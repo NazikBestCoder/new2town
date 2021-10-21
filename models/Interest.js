@@ -35,4 +35,3 @@ Interest.init(
 )
 
 module.exports = Interest;
->>>>>>> 2978ce0fe567b3ec691b91f28ff3ab4c0c55f2b0
