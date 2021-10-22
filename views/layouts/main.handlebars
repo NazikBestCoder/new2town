@@ -7,38 +7,38 @@
     <title>New2Town</title>
   </head>
   <body>
-    <header class="bg-green-200 h-28 w-screen relative">
-      <nav class=" bg-blue-400 bg-opacity-75 flex justify-left flex md:flex-nowrap lg:flex-wrap space-x-4">
+    <header class="h-28 w-screen relative">
+      <nav class=" bg-red-300 bg-opacity-75 flex justify-left flex md:flex-nowrap lg:flex-wrap space-x-4">
         <a href="/"><button
-            class="hover:bg-blue-400 hover:shadow-inner rounded-lg w-24 h-12"
+            class="hover:bg-red-400 hover:shadow-inner rounded-lg w-24 h-12"
           >Home</button></a>
         {{#if logged_in}}
           <a href="/profile/{{user_id}}"><button
-              class="hover:bg-blue-400 hover:shadow-inner rounded-lg w-24 h-12"
+              class="hover:bg-red-400 hover:shadow-inner rounded-lg w-24 h-12"
             >Profile</button></a>
           <a href="/friendslist"><button
-              class="hover:bg-blue-400 hover:shadow-inner rounded-lg w-24 h-12"
+              class="hover:bg-red-400 hover:shadow-inner rounded-lg w-24 h-12"
             >Friends List</button></a>
           <button
             id="logout"
-            class="flex-initial hover:bg-blue-400 hover:shadow-inner rounded-lg w-24 h-12" 
+            class="hover:bg-red-400 hover:shadow-inner rounded-lg w-24 h-12" 
           >Logout</button>
         {{else}}
           <a href="/login"><button
-              class=" hover:bg-blue-400 hover:shadow-inner rounded-lg w-24 h-12"
+              class=" hover:bg-red-400 hover:shadow-inner rounded-lg w-24 h-12"
             >Login</button></a>
         {{/if}}
       </nav>
 
-      <h1 class="font-bold text-blue-50 text-4xl text-center p-3">New2Town</h1>
+      <h1 class="font-bold text-red-200 text-4xl text-center p-8">New2Town</h1>
 
     </header>
     <main>
       {{{body}}}
     </main>
 
-    <footer class="bg-green-200 h-8 w-screen bottom-0">
-      <h1 class="block font-bold text-blue-50 text-xl text-center">New2Town</h1>
+    <footer class="bg-red-200 object-bottom p-8">
+      <p class="block text-center text-white">&copy; Joseph Fisher, Nazik Askarbekkyzy, Aidan Rich, Molly Singmaster</p>
     </footer>
 
     {{#if logged_in}}
