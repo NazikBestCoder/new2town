@@ -8,7 +8,8 @@
   </head>
   <body>
     <header class="h-28 w-screen relative">
-      <nav class=" bg-red-300 bg-opacity-75 flex justify-left flex md:flex-nowrap lg:flex-wrap space-x-4">
+      <nav class=" bg-red-300 bg-opacity-75 flex justify-left space-x-4">
+          <h1 class="font-bold text-white text-4xl text-center p-8">New2Town</h1>
         <a href="/"><button
             class="hover:bg-red-400 hover:shadow-inner rounded-lg w-24 h-12"
           >Home</button></a>
@@ -30,15 +31,13 @@
         {{/if}}
       </nav>
 
-      <h1 class="font-bold text-red-200 text-4xl text-center p-8">New2Town</h1>
-
     </header>
     <main>
       {{{body}}}
     </main>
 
-    <footer class="bg-red-200 object-bottom p-8">
-      <p class="block text-center text-white">&copy; Joseph Fisher, Nazik Askarbekkyzy, Aidan Rich, Molly Singmaster</p>
+    <footer class="bg-red-200 relative md:absolute inset-x-0 bottom-0 p-8">
+      <p class="text-center text-white">&copy; Joseph Fisher, Nazik Askarbekkyzy, Aidan Rich, Molly Singmaster</p>
     </footer>
 
     {{#if logged_in}}
