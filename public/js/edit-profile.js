@@ -1,16 +1,15 @@
-const editFormHandler = async () => {
-    
-    //   const name = document.querySelector('#full-name').value.trim();
-    //   const activity= document.querySelector('#activities').value.trim();
-    //   const interests = document.querySelector('#interests').value.trim();
+const user_id = document.querySelector("#id-number").innerHTML;
+
+const editLocationHandler = async (event) => {
+    event.preventDefault();
+
     const location = document.querySelector('#location-update').value.trim();
-    const user_id = document.querySelector("#id-number").innerHTML;
+    
 
     console.log(location)
-    // The Controller will handle this 'put' request.
-    // ACTIVITY
+
     if (location) {
-        const response = await fetch(`/profile/${user_id}`, {
+        const response = await fetch(`/profile/city/${user_id}`, {
             method: 'PUT',
             body: JSON.stringify({
                 location
@@ -19,42 +18,44 @@ const editFormHandler = async () => {
                 'Content-Type': 'application/json',
             },
         });
-
-     
-        // If the response is ok, profile was updated successfully. 
+        console.log(response)
         if (response.ok) {
             document.location.replace(`/profile/${user_id}`);
         } else {
             alert('Failed to edit activity');
         }
     }
+
+
 }
-    // INTERESTS
-    // const response = await fetch(`/api/interest/${id}`, {
-    //     method: 'PUT',
-    //     body: JSON.stringify({
-    //         interest_name,
-    //         description
-    //     }),
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    // });
-
-    // if (response.ok) {
-    //     document.location.replace(`/interest/${id}`);
-    // } else {
-    //     alert('Failed to edit interest');
-    // }
 
 
-    // WILL BE LOCATION OR STATUS< BUT FOR NOW WORKING ON BASICS
-    // if (response.ok) {
-    //   document.location.replace(`/activity/${id}`);
-    // } else {
-    //   alert('Failed to edit activity');
-    // }
+document.querySelector('#location-button').addEventListener('click', editLocationHandler);
 
+const editStatus = async (event) => {
+    event.preventDefault();
 
-    document.querySelector('.edit-profile-form').addEventListener('submit', editFormHandler);
+    const status = document.querySelector('#status-update').value.trim();
+   
 
+    if (status) {
+        const response = await fetch(`/profile/status/${user_id}`, {
+            method: 'PUT',
+            body: JSON.stringify({
+                status,
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (response.ok) {
+            document.location.replace(`/profile/${user_id}`);
+        } else {
+            alert('Failed to edit activity');
+        }
+    }
+
+}
+
+document.querySelector('#status-button').addEventListener('click', editStatus);
