@@ -2,8 +2,9 @@ const sequelize = require('../config/connection');
 const seedUser = require('./userData')
 const seedInterest = require('./interestData');
 const seedActivities = require('./activityData');
-const seedUserActivity = require('./userActivityData')
-const seedUserInterest = require('./userInterestData')
+const seedUserActivity = require('./userActivityData');
+const seedUserInterest = require('./userInterestData');
+const seedFriends = require('./FriendsData');
 
 const seedAll = async () => {
     await sequelize.sync({ force: true });
@@ -18,6 +19,8 @@ const seedAll = async () => {
     console.log('\n----- USER ACTIVITIES SEEDED-----\n');
     await seedUserInterest();
     console.log('\n----- USER INTERESTS SEEDED-----\n');
+    await seedFriends();
+    console.log('\n----- FRIENDS SEEDED-----\n');
     process.exit(0); 
 };
 
