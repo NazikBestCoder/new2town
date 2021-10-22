@@ -60,6 +60,34 @@ const editStatus = async (event) => {
 document.querySelector('#status-button').addEventListener('click', editStatus);
 
 
+const editPhoto = async (event) => {
+    event.preventDefault();
+
+    const photo_url = document.querySelector('#uploadedImage').getAttribute("src");
+   
+
+    if (photo_url) {
+        const response = await fetch(`/profile/photo/`, {
+            method: 'PUT',
+            body: JSON.stringify({
+                photo_url,
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (response.ok) {
+            document.location.replace(`/profile/${user_id}`);
+        } else {
+            alert('Failed to edit activity');
+        }
+    }
+}
+
+document.querySelector('#photo-button').addEventListener('click', editPhoto);
+
+
 const addInterest = async (event) => {
     event.preventDefault();
 
@@ -82,8 +110,6 @@ const addInterest = async (event) => {
             alert('Failed to add interest');
         }
     }
-
-
 
 }
 

@@ -19,7 +19,7 @@ router.get('/:user_id', withAuth, async (req, res) => {
     }
 
     const profile = profileData.get({ plain: true });
-
+    console.log(profile)
     res.render('myprofile', {profile,
       logged_in: req.session.logged_in,
       user_id: req.session.user_id,});
@@ -32,6 +32,32 @@ router.get('/:user_id', withAuth, async (req, res) => {
 
 router.put('/city/:user_id', withAuth, async (req, res) => {
   console.log("location hit")
+  try {
+
+    const profileData = await User.update(req.body,
+      {
+        where: {
+          id: req.session.user_id,
+        },
+      }
+    );
+
+    if (!profileData) {
+      res.status(404).json({ message: 'No user with this id!' });
+      return;
+    }
+
+    res.status(200).json("Success");
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+
+});
+
+router.put('/photo/', withAuth, async (req, res) => {
+  console.log("location hit", req.body)
   try {
 
     const profileData = await User.update(req.body,
