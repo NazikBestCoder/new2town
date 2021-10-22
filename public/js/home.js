@@ -12,8 +12,9 @@ async function generateResultCards (){
     
         if (response.ok) {
             const res = await response.json();
-            console.log(response);
-            console.log(res);
+            // console.log(response);
+            // console.log(res);
+            console.log(res[0]["user-activities"][0]);
             gottenUsers = res
         } else {
           alert('Failed to search.');

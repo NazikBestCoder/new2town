@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Interest, Activity } = require('../models');
+const { User, Interest, Activity, UserActivity } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) =>{
@@ -28,7 +28,10 @@ router.get('/search/:act', async (req, res) =>{
 
       // const currentUser = currentUserData.get({ plain: true });
 
-      const userData = await User.findAll();
+      const userData = await User.findAll({
+        include: [
+          { model: Activity, through: UserActivity, as: "user-activities"}
+        ]});
       
       const userAll = userData.map((user) => user.get({ plain: true }));
 

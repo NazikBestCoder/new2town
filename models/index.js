@@ -17,4 +17,4 @@ User.belongsToMany(User, { through: Friends, as: "friends", foreignKey: "friends
 
 
 
-module.exports = { User, Interest, Activity };
+module.exports = { User, Interest, Activity, UserActivity, Friends, UserInterest };
