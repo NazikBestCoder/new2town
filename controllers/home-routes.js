@@ -33,13 +33,35 @@ router.get('/search/:act', async (req, res) =>{
       
       const userAll = userData.map((user) => user.get({ plain: true }));
 
+      let currentUser;
+
+      function findCurrentUser () {
+        for (let i = 0; i < userAll.length; i++ ){
+          if (userAll[i].id === req.session.user_id){
+            currentUser = userAll[i];
+          }
+        }
+        currentUser.interestIds = []
+      }
+      await findCurrentUser();
+      console.log("CURRENT USER:");
+      console.log(currentUser);
+      console.log("CURRENT USER^");
+
       const filteredUsers = userAll.filter((user) => {
         for (let i = 0; i < user["user_activities"].length; i++ ){
-          if(user["user_activities"][i].id == req.params.act && user.id !== req.session.user_id){
+          if(user["user_activities"][i].id == req.params.act && user.id !== req.session.user_id && currentUser.location === user.location){
             return user;
           }
         }
       })
+
+      function sortByInterests(users){
+        for (let i = 0; i < users.length; i ++){
+
+        }
+        users.sort(a,b)
+      };
 
      
       console.log(filteredUsers);
