@@ -16,14 +16,14 @@ Activity.init(
       allowNull: false,
     },
     // This column will store a reference of the `id` of the `User` that owns this Activity
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        // This references the `user` model, which we set in `User.js` as its `modelName` property
-        model: 'user',
-        key: 'id',
-      },
-    },
+    // user_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     // This references the `user` model, which we set in `User.js` as its `modelName` property
+    //     model: 'user',
+    //     key: 'id',
+    //   },
+    // },
   },
   {
     sequelize,
