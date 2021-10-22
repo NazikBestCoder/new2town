@@ -1,55 +1,80 @@
-<div class="col-md-6">
-  <h2 class="text-3xl p-8">Login</h2>
+<div class="flex justify-around md:flex-nowrap lg: flex-wrap">
+  <div class="col-md-6">
 
-  <form class="form login-form">
-    <div class="form-group p-3">
-      <label for="email-login" class="pr-11">Email:</label>
-      <input class="form-input border pr-4" type="text" id="email-login" />
-    </div>
-    <div class="form-group p-3">
-      <label for="password-login" class="pr-4">Password:</label>
-      <input class="form-input border pr-4" type="password" id="password-login" />
-    </div>
-    <div class="form-group p-6">
-      <button class="btn btn-primary hover:shadow-inner rounded-full w-20 h-10 border-black border-2" type="submit">Login</button>
-    </div>
-  </form>
-</div>
+    <form class="form login-form container mx-auto">
+      <h2 class="text-3xl p-8">Login</h2>
+      <div class="form-group p-3">
+        <label for="email-login" class="pr-11">Email:</label>
+        <input class="form-input border pr-4" type="text" id="email-login" />
+      </div>
+      <div class="form-group p-3">
+        <label for="password-login" class="pr-4">Password:</label>
+        <input
+          class="form-input border pr-4"
+          type="password"
+          id="password-login"
+        />
+      </div>
+      <div class="form-group p-6">
+        <button
+          class="btn btn-primary hover:shadow-inner rounded-full w-20 h-10 border-black border-2"
+          type="submit"
+        >Login</button>
+      </div>
+    </form>
+  </div>
 
-<div class="col-md-6">
-  <h2 class="text-3xl p-8">Sign Up</h2>
-  <form class="form signup-form">
-    <div class="form-group p-3">
-      <label for="name-signup" class="pr-11">Name:</label>
-      <input class="form-input border pr-4" type="text" id="name-signup" />
-    </div>
-    <div class="form-group p-3">
-      <label for="email-signup" class="pr-11">Email:</label>
-      <input class="form-input border pr-4" type="text" id="email-signup" />
-    </div>
-    <div class="form-group p-3">
-      <label for="password-signup" class="pr-4">Password:</label>
-      <input class="form-input border pr-4" type="password" id="password-signup" />
-    </div>
-    <div class="form-group p-3">
-                    <label for="interest-signup" class="pr-6">Interests:</label>
-                    <textarea class="form-input border pr-4" type="text" id="interest-signup"></textarea>
-                </div>
-                <div class="p-3">
-                    <label for="activities-signup">Activities:</label><br>
-                    <input type="checkbox" class="rounded"  name="restaurant" value="Stuff Your Face">
-                    <label for="restaurant"> Stuff Your Face</label><br>
-                    <input type="checkbox" name="drinking" value="Get schwasted">
-                    <label for="drinking"> Get schwasted</label><br>
-                    <input type="checkbox"  name="hiking" value="Walk Around Trees">
-                    <label for="hiking"> Walk around trees</label><br>
-                    <input type="checkbox"  name="games" value="Get Competitive">
-                    <label for="Get Competitive"> Get competitive</label><br>
-                </div>
-    <div class="form-group p-6">
-      <button class="btn btn-primary hover:shadow-inner rounded-full w-20 h-10 border-black border-2" type="submit">signup</button>
-    </div>
-  </form>
+  <div class="col-md-6">
+    <form class="form signup-form container mx-auto">
+      <h2 class="text-3xl p-8">Sign Up</h2>
+      <div class="form-group p-3">
+        <label for="name-signup" class="pr-11">Name:</label>
+        <input class="form-input border pr-4" type="text" id="name-signup" />
+      </div>
+      <div class="form-group p-3">
+        <label for="email-signup" class="pr-11">Email:</label>
+        <input class="form-input border pr-4" type="text" id="email-signup" />
+      </div>
+      <div class="form-group p-3">
+        <label for="password-signup" class="pr-4">Password:</label>
+        <input
+          class="form-input border pr-4"
+          type="password"
+          id="password-signup"
+        />
+      </div>
+      <div class="form-group p-3">
+        <label for="interest-signup" class="pr-6">Interests:</label>
+        <textarea
+          class="form-input border pr-4"
+          type="text"
+          id="interest-signup"
+        ></textarea>
+      </div>
+      <div class="p-3">
+        <label for="activities-signup">Activities:</label><br />
+        <input
+          type="checkbox"
+          class="rounded"
+          name="restaurant"
+          value="Stuff Your Face"
+        />
+        <label for="restaurant"> Stuff Your Face</label><br />
+        <input type="checkbox" name="drinking" value="Get schwasted" />
+        <label for="drinking"> Get schwasted</label><br />
+        <input type="checkbox" name="hiking" value="Walk Around Trees" />
+        <label for="hiking"> Walk around trees</label><br />
+        <input type="checkbox" name="games" value="Get Competitive" />
+        <label for="Get Competitive"> Get competitive</label><br />
+      </div>
+      <div class="form-group p-6">
+        <button
+          class="btn btn-primary hover:shadow-inner rounded-full w-20 h-10 border-black border-2"
+          type="submit"
+        >signup</button>
+      </div>
+    </form>
+  </div>
 </div>
 
 <script src="/js/login.js"></script>
