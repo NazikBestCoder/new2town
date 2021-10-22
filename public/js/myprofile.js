@@ -5,9 +5,9 @@ const newFormHandler = async (event) => {
     const activity= document.querySelector('#activities').value.trim();
     const interests = document.querySelector('#interests').value.trim();
     const location = document.querySelector('#location').value.trim();
-  
+//   not finished
     if (name && activity && interests && location) {
-      const response = await fetch(`/api/actvity`, {
+      const response = await fetch(`/api/activity`, {
         method: 'POST',
         body: JSON.stringify({ name, activity, interests, location }),
         headers: {

@@ -20,8 +20,7 @@ async function editFormHandler(event) {
     },
   });
 
-  // What happens if the response is ok?
-  // If the response is ok, that means that the dish was updated successfully. 
+  // If response is okay, profile was updated!!
   if (response.ok) {
     document.location.replace(`/activity/${id}`);
   } else {
