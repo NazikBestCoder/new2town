@@ -41,12 +41,15 @@ router.get('/search/:act', async (req, res) =>{
             currentUser = userAll[i];
           }
         }
-        currentUser.interestIds = []
+        currentUser.interestIds = [];
+        for (let i = 0; i < currentUser['user_interests'].length; i++){
+          currentUser.interestIds.push(currentUser['user_interests'][i].id);
+        }
       }
       await findCurrentUser();
-      console.log("CURRENT USER:");
-      console.log(currentUser);
-      console.log("CURRENT USER^");
+      // console.log("CURRENT USER:");
+      // console.log(currentUser);
+      // console.log("CURRENT USER^");
 
       const filteredUsers = userAll.filter((user) => {
         for (let i = 0; i < user["user_activities"].length; i++ ){
@@ -58,13 +61,21 @@ router.get('/search/:act', async (req, res) =>{
 
       function sortByInterests(users){
         for (let i = 0; i < users.length; i ++){
-
+          users[i].commonInterests = 0;
+          users[i]['user_interests'].forEach(interest => {
+            if (currentUser.interestIds.includes(interest.id)){
+              users[i].commonInterests++;
+            }
+          });
         }
-        users.sort(a,b)
+        users.sort((a, b) => (a.commonInterests > b.commonInterests) ? -1 : 1)
+        // console.log(users);
       };
 
+      sortByInterests(filteredUsers)
+
      
-      console.log(filteredUsers);
+      // console.log(filteredUsers);
 
       res.status(200).json(filteredUsers);
 

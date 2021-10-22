@@ -18,13 +18,13 @@ const users = [
         username: 'Molly',
         email: 'test3@test.com',
         password: 'pass123',
-        location: 'Chalfont',
+        location: 'Philadelphia',
     },
     {
         username: 'Nazik',
         email: 'test4@test.com',
         password: 'pass123',
-        location: 'Chalfont',
+        location: 'Philadelphia',
     },
 ];
 
