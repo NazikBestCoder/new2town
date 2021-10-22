@@ -26,10 +26,11 @@ async function generateResultCards() {
         cardsHtml += `<div><p>No Users Found for This Activity.</p></div>`
     } else {
         for (let i = 0; i < gottenUsers.length; i++) {
-            let commonInterestsStr = "";
+            let commonInterestsStr = "<ol>";
             gottenUsers[i].commonInterests.forEach(interest => {
-                commonInterestsStr += `${interest}, `
+                commonInterestsStr += `<li>${interest}</li>`
             });
+            commonInterestsStr += `</ol>`
                 cardsHtml += `</div>
           <a href="/profile/${gottenUsers[i].id}"> <div class="card border-black border-2 rounded-lg inline-block w-52 h-64 mx-5">
        <div class="container">
