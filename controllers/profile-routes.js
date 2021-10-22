@@ -2,43 +2,71 @@ const router = require('express').Router();
 const { User, Interest, Activity } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/:user_id', withAuth, async (req, res) =>{
-    try {
+router.get('/:user_id', withAuth, async (req, res) => {
+  try {
 
-        const profileData = await User.findByPk(req.session.user_id);
+    const profileData = await User.findByPk(req.session.user_id);
 
-        if(!profileData) {
-            res.status(404).json({message: 'No user with this id!'});
-            return;
-        }
+    if (!profileData) {
+      res.status(404).json({ message: 'No user with this id!' });
+      return;
+    }
 
-        const profile = profileData.get({ plain: true });
+    const profile = profileData.get({ plain: true });
 
-        res.render('myprofile', profile);
-    
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-      }
+    res.render('myprofile', profile);
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 })
 
-router.put('/:user_id', withAuth, async (req, res) => {
+router.put('/city/:user_id', withAuth, async (req, res) => {
+  console.log("location hit")
+  try {
+
+    const profileData = await User.update(req.body,
+      {
+        where: {
+          id: req.session.user_id,
+        },
+      }
+    );
+
+    if (!profileData) {
+      res.status(404).json({ message: 'No user with this id!' });
+      return;
+    }
+
+    res.status(200).json("Success");
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+
+});
+
+router.put('/status/:user_id', withAuth, async (req, res) => {
 
   try {
 
-    const profileData = await User.update({
-      location: req.body.location,
-    },
-    {
-      where: {
-        id: req.session.user_id,
-      },
-    }
+    const profileData = await User.update(req.body,
+      {
+        where: {
+          id: req.session.user_id,
+        },
+      }
     );
 
-    const profile = profileData.put({ plain: true });
+    if (!profileData) {
+      res.status(404).json({ message: 'No user with this id!' });
+      return;
+    }
+    console.log("status hit")
 
-    res.render('myprofile', profile);
+    res.status(200).json("Success");
 
   } catch (err) {
     console.log(err);
@@ -49,12 +77,12 @@ router.put('/:user_id', withAuth, async (req, res) => {
 
 
 router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-      res.redirect('/');
-      return;
-    }
-  
-    res.render('login');
-  });
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
+});
 
 module.exports = router;
