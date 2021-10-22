@@ -37,7 +37,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 // picture middleware
 // app.engine('html', mustacheExpress());
 // app.set('view engine', 'mustache');
-app.use('/public', express.static('/public'));
+app.use('/public', express.static('public'));
 app.use(routes);
 // starts the server to begin listening
 sequelize.sync({ force: false }).then(() => {

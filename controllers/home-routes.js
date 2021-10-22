@@ -35,7 +35,7 @@ router.get('/search/:act', async (req, res) =>{
 
       const filteredUsers = userAll.filter((user) => {
         for (let i = 0; i < user["user_activities"].length; i++ ){
-          if(user["user_activities"][i].id == req.params.act){
+          if(user["user_activities"][i].id == req.params.act && user.id !== req.session.user_id){
             return user;
           }
         }
