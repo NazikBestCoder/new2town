@@ -1,4 +1,5 @@
 const user_id = document.querySelector("#id-number").innerHTML;
+const interestBtnEl = document.getElementById("interests-button");
 
 const editLocationHandler = async (event) => {
     event.preventDefault();
@@ -62,7 +63,7 @@ document.querySelector('#status-button').addEventListener('click', editStatus);
 const addInterest = async (event) => {
     event.preventDefault();
 
-    const interest = document.querySelector('#interest').value.trim();
+    const interest = document.querySelector('#interests').value.trim();
 
     if (interest){
         const response = await fetch(`/profile/interest/${user_id}`, {
@@ -78,10 +79,12 @@ const addInterest = async (event) => {
         if (response.ok) {
             document.location.replace(`/profile/${user_id}`);
         } else {
-            alert('Failed to edit activity');
+            alert('Failed to add interest');
         }
     }
 
 
 
 }
+
+interestBtnEl.addEventListener("click", addInterest)
