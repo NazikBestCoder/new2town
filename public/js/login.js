@@ -26,11 +26,13 @@ const signupFormHandler = async (event) => {
   const username = document.querySelector('#name-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
+  const interests = document.querySelector('#interest-signup').value.trim();
+  const location = document.querySelector('#location-signup').value.trim();
 
-  if (username && email && password) {
+  if (username && email && password && interests && location) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ username, email, password }),
+      body: JSON.stringify({ username, email, password, interests, location }),
       headers: { 'Content-Type': 'application/json' },
     });
 
