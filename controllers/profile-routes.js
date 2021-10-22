@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Interest, Activity } = require('../models');
+const { User, Interest, Activity, UserInterest } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/:user_id', withAuth, async (req, res) => {
@@ -49,9 +49,7 @@ router.put('/city/:user_id', withAuth, async (req, res) => {
 });
 
 router.put('/status/:user_id', withAuth, async (req, res) => {
-
   try {
-
     const profileData = await User.update(req.body,
       {
         where: {
@@ -73,6 +71,19 @@ router.put('/status/:user_id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 
+});
+
+router.post('/interest/:user_id', withAuth, async (req, res) => {
+  try {
+    const profileData = await UserInterest.create({
+      user_id: req.session.user_id,
+      Interest_id: req.body
+    })
+    res.json(profileData)
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 
