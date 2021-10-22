@@ -2,7 +2,7 @@
   <div>
     {{! going to change username to name, after we decide }}
 
-    <h1><span id='id-number'>{{id}}. </span>My Profile</h1>
+    <h1><span id='id-number'>{{id}}.) </span>My Profile</h1>
 
     <form class='edit profile edit-profile-form'>
       <img src='https://via.placeholder.com/200' id='img-preview' />
@@ -22,16 +22,13 @@
       {{! will prabably delete passwod, maybe we could put it in the settings }}
       {{! for now location and status are intentionally blank }}
       <div>
-        <label for='password-login'>Password:</label>
-        <input type='password' />
-      </div>
-      <div>
-        <label for='location'>Location:</label>
+        <label for='location'>Update Location:</label>
         <input
           type='location'
           placeholder='{{location}}'
           id='location-update'
         />
+        <button id="location-button">Submit</button>
       </div>
       <div>
         <label for='interests'>Interests:</label>
@@ -47,8 +44,9 @@
         />
       </div>
       <div>
-        <label for='status'>Status:</label>
-        <input type='status' />
+        <label for='status'>Status: </label>
+        <input type='status' placeholder="Anything new? {{status}}" id="status-update" />
+        <button id="status-button">Submit</button>
       </div>
       <div>
         <button type='submit'>Save Profile Changes</button>
