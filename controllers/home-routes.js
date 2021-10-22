@@ -61,21 +61,22 @@ router.get('/search/:act', async (req, res) =>{
 
       function sortByInterests(users){
         for (let i = 0; i < users.length; i ++){
-          users[i].commonInterests = 0;
+          users[i].commonInterests = [];
           users[i]['user_interests'].forEach(interest => {
+            console.log(users[i]['user_interests']);
             if (currentUser.interestIds.includes(interest.id)){
-              users[i].commonInterests++;
+              users[i].commonInterests.push(interest.name);
             }
           });
         }
-        users.sort((a, b) => (a.commonInterests > b.commonInterests) ? -1 : 1)
-        // console.log(users);
+        users.sort((a, b) => (a.commonInterests.length > b.commonInterests.length) ? -1 : 1)
+        console.log(users);
       };
 
       sortByInterests(filteredUsers)
 
      
-      // console.log(filteredUsers);
+      console.log(filteredUsers);
 
       res.status(200).json(filteredUsers);
 
