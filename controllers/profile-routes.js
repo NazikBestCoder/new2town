@@ -75,11 +75,15 @@ router.put('/status/:user_id', withAuth, async (req, res) => {
 
 router.post('/interest/:user_id', withAuth, async (req, res) => {
   try {
+    const interestData = await Interest.create({
+      name: req.body.interest,
+    })
+
     const profileData = await UserInterest.create({
       user_id: req.session.user_id,
-      Interest_id: req.body
+      interest_id: interestData.id,
     })
-    res.json(profileData)
+    res.status(200).json(profileData)
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
