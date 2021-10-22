@@ -125,6 +125,22 @@ router.post('/interest/:user_id', withAuth, async (req, res) => {
 });
 
 
+router.get('/active/:id', withAuth, async (req, res) => {
+  try {
+
+    const profileData = await Activity.findByPk(req.params.id)
+
+    const activity = profileData.get({ plain: true });
+
+    res.render('myprofile', {activity,
+      logged_in: req.session.logged_in,
+  });
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
