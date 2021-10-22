@@ -26,7 +26,6 @@ const editLocationHandler = async (event) => {
         }
     }
 
-
 }
 
 
@@ -55,7 +54,34 @@ const editStatus = async (event) => {
             alert('Failed to edit activity');
         }
     }
-
 }
 
 document.querySelector('#status-button').addEventListener('click', editStatus);
+
+
+const addInterest = async (event) => {
+    event.preventDefault();
+
+    const interest = document.querySelector('#interest').value.trim();
+
+    if (interest){
+        const response = await fetch(`/profile/interest/${user_id}`, {
+            method: 'POST',
+            body: JSON.stringify({
+                interest,
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (response.ok) {
+            document.location.replace(`/profile/${user_id}`);
+        } else {
+            alert('Failed to edit activity');
+        }
+    }
+
+
+
+}
