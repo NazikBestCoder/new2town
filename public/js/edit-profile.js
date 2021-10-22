@@ -20,8 +20,8 @@ const editFormHandler = async () => {
             },
         });
 
-        // What happens if the response is ok?
-        // If the response is ok, that means that the dish was updated successfully. 
+     
+        // If the response is ok, profile was updated successfully. 
         if (response.ok) {
             document.location.replace(`/profile/${user_id}`);
         } else {

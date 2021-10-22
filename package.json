@@ -27,15 +27,18 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
     "express-session": "^1.17.2",
-    "mysql2": "^2.3.2",
-    "sequelize": "^6.7.0",
     "mustache-express": "^1.2.4",
-    "nodemon": "^1.11.0",
-    "path": "^0.12.7"
+    "mysql2": "^2.3.2",
+    "nodemon": "^2.0.14",
+    "path": "^0.12.7",
+    "sequelize": "^6.7.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.7",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^6.15.0",
     "postcss": "^8.3.9",
+    "prettier": "^2.4.1",
     "tailwindcss": "^2.2.17"
   }
 }

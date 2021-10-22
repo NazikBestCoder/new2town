@@ -1,42 +1,60 @@
 <div>
-    <div>
-        <h1><span id="id-number">{{id}}.) </span>my Profile</h1>
+  <div>
+    {{! going to change username to name, after we decide }}
 
-        <form class="edit profile edit-profile-form">
-            <div>
-                <label for="name">Full Name: {{username}}</label>
-                <input type="text"/>
-            </div>
-            <div>
-                <label for="email-login">Email: {{email}}</label>
-                <input type="text"/>
-            </div>
-            {{!-- will prabably delete passwod, maybe we could put it in the settings --}}
-            <div>
-                <label for="password-login">Password:</label>
-                <input type="password"/>
-            </div>
-            <div>
-                <label for="location">Location:</label>
-                <input type="location" placeholder="{{location}}" id="location-update"/>
-            </div>
-            <div>
-                <label for="interests">Interests:</label>
-                <input type="interests"/>
-            </div>
-            <div>
-                <label for="activities">Activities:</label>
-                <input type="activities"/>
-            </div>
-            <div>
-                <label for="status">Status:</label>
-                <input type="status"/>
-            </div>
-            <div>
-                <button type="submit">Save Profile Changes</button> 
-            </div>
-        </form>
-    </div>
-    
+    <h1><span id='id-number'>{{id}}. </span>My Profile</h1>
+
+    <form class='edit profile edit-profile-form'>
+      <img src='https://via.placeholder.com/200' id='img-preview' />
+      <label class='file-upload-container' for='file-upload'>
+        <input id='file-upload' type='file' style='display:none;' />
+        Select an Image
+      </label>
+      <div>
+        <label for='name'>Full Name: {{username}}</label>
+        <input type='text' />
+      </div>
+      <div>
+        <label for='email-login'>Email: {{email}}</label>
+        <input type='text' />
+      </div>
+
+      {{! will prabably delete passwod, maybe we could put it in the settings }}
+      {{! for now location and status are intentionally blank }}
+      <div>
+        <label for='password-login'>Password:</label>
+        <input type='password' />
+      </div>
+      <div>
+        <label for='location'>Location:</label>
+        <input
+          type='location'
+          placeholder='{{location}}'
+          id='location-update'
+        />
+      </div>
+      <div>
+        <label for='interests'>Interests:</label>
+        <input class='form-input' type='text' id='interests' name='interests' />
+      </div>
+      <div>
+        <label for='activities'>Activities:</label>
+        <input
+          class='form-input'
+          type='text'
+          id='activities'
+          name='activities'
+        />
+      </div>
+      <div>
+        <label for='status'>Status:</label>
+        <input type='status' />
+      </div>
+      <div>
+        <button type='submit'>Save Profile Changes</button>
+      </div>
+    </form>
+  </div>
+
 </div>
-<script src="/js/edit-profile.js"></script>
+<script src='/js/edit-profile.js'></script>
