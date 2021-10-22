@@ -1,11 +1,17 @@
 const router = require('express').Router();
-const { User, Interest, Activity, UserInterest } = require('../models');
+const { User, Interest, Activity, UserInterest, UserActivity, Friends } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/:user_id', withAuth, async (req, res) => {
   try {
 
-    const profileData = await User.findByPk(req.session.user_id);
+    const profileData = await User.findByPk(req.session.user_id, {
+      include:[
+        { model: Activity, through: UserActivity, as: "user_activities"},
+        { model: Interest, through: UserInterest, as: "user_interests"},
+        { model: User, through: Friends, as: "user_friends"},
+      ]
+    });
 
     if (!profileData) {
       res.status(404).json({ message: 'No user with this id!' });
@@ -14,7 +20,9 @@ router.get('/:user_id', withAuth, async (req, res) => {
 
     const profile = profileData.get({ plain: true });
 
-    res.render('myprofile', profile);
+    res.render('myprofile', {profile,
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id,});
 
   } catch (err) {
     console.log(err);
