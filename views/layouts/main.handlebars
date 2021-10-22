@@ -7,26 +7,26 @@
     <title>New2Town</title>
   </head>
   <body>
-    <header class="h-28 w-screen relative">
-      <nav class=" bg-red-300 bg-opacity-75 flex justify-left space-x-4">
+    <header class="h-28 w-screen">
+      <nav class=" bg-red-300 bg-opacity-75 flex justify-left flex-col md:flex-row space-x-4">
           <h1 class="font-bold text-white text-4xl text-center p-8">New2Town</h1>
-        <a href="/"><button
-            class="hover:bg-red-400 hover:shadow-inner rounded-lg w-24 h-12"
-          >Home</button></a>
+            <a href="/"><button
+            class="hover:bg-red-400 hover:shadow-inner rounded-lg w-full lg:w-24 h-12"
+            >Home</button></a>
         {{#if logged_in}}
           <a href="/profile/{{user_id}}"><button
-              class="hover:bg-red-400 hover:shadow-inner rounded-lg w-24 h-12"
+              class="hover:bg-red-400 hover:shadow-inner rounded-lg  w-full lg:w-24 h-12"
             >Profile</button></a>
           <a href="/friendslist"><button
-              class="hover:bg-red-400 hover:shadow-inner rounded-lg w-24 h-12"
+              class="hover:bg-red-400 hover:shadow-inner rounded-lg w-full lg:w-24 h-12"
             >Friends List</button></a>
-          <button
+          <a><button
             id="logout"
-            class="hover:bg-red-400 hover:shadow-inner rounded-lg w-24 h-12" 
-          >Logout</button>
+            class="hover:bg-red-400 hover:shadow-inner rounded-lg w-full lg:w-24 h-12" 
+          >Logout</button></a>
         {{else}}
           <a href="/login"><button
-              class=" hover:bg-red-400 hover:shadow-inner rounded-lg w-24 h-12"
+              class=" hover:bg-red-400 hover:shadow-inner rounded-lg w-full lg:w-24 h-12"
             >Login</button></a>
         {{/if}}
       </nav>
@@ -41,7 +41,7 @@
     </footer>
 
     {{#if logged_in}}
-      <script src="/js/logout.js"></script>
+      <script src="/js/logout.js"></script> 
     {{/if}}
 
   </body>
