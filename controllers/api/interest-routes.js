@@ -17,8 +17,18 @@ router.get('/', withAuth, async (req, res) =>{
       } 
 });
 
+router.post('/', (req, res) => {
+
+    Interest.create(req.body)
+    .then((newInterest) => {
+      res.json(newInterest);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+  });
+
 router.put('/:id', (req, res) => {
-    // update a category by its `id` value
     Interest.update({
         name: req.body.name,
     },
@@ -29,7 +39,6 @@ router.put('/:id', (req, res) => {
         }
     )
         .then((updatedInterest) => {
-            // Sends the updated book as a json response
             res.json(updatedInterest);
         })
         .catch((err) => res.json(err));

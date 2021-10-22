@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="/css/style.css">
 <title>New2Town</title>
 </head>
-<body >
+<body>
     <header class="bg-green-200 h-28 w-screen relative">
-        <nav class="left-0 mb-3">
-            <button class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2 mx-3">Home</button>
-            <button class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2 mx-3">Login</button>
-            <button class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2 mx-3">Profile</button>
-            <button class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2 mx-3">Friends List</button>
-
+        <nav class="left-0 mb-3 flex md:flex-nowrap lg: flex-wrap">
+            <a href="/" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Home</a>
+            {{#if logged_in}}
+            <a href="/profile/{{user_id}}" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Profile</a>
+            <a href="/friendslist" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Friends List</a>
+            <button id="logout" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Logout</button>
+            {{else}}
+            <a href="/login" class="bg-blue-400 hover:bg-blue-600 hover:shadow-inner rounded-b-lg w-24 h-12 border-black border-2">Login</a>
+            {{/if}}
         </nav>
 
         <h1 class="font-bold text-blue-50 text-4xl text-center">New2Town</h1>
@@ -25,9 +28,13 @@
         {{{body}}}
     </main>
 
-    <footer class="bg-green-200 h-8 w-screen absolute bottom-0">
-        <h1 class="font-bold text-blue-50 text-xl text-center">New2Town</h1>
+    <footer class="bg-green-200 h-8 w-screen bottom-0">
+        <h1 class="font-bold text-blue-50 text-xl text-center">New2Town</h1> 
     </footer>
+
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
     
-</body>
+</body> 
 </html>

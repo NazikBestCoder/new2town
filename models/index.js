@@ -13,8 +13,10 @@ User.belongsToMany(Activity, { through: UserActivity, as: "user-activities", for
 
 Activity.belongsToMany(User, { through: UserActivity, as: "activitys-user", foreignKey: "activity_id", onDelete: "SET NULL"});
 
-User.belongsToMany(User, { through: Friends, as: "friends", foreignKey: "friends_id", onDelete: "SET NULL"});
+User.belongsToMany(User, { through: Friends, as: "user-friends", foreignKey: "friend_id", onDelete: "SET NULL"});
+
+User.belongsToMany(User, { through: Friends, as: "friends", foreignKey: "user_id", onDelete: "SET NULL"});
 
 
 
-module.exports = { User, Interest, Activity };
+module.exports = { User, Interest, Activity, UserActivity, Friends, UserInterest };

@@ -35,7 +35,12 @@ User.init(
         len: [6],
       },
     },
-
+    location: {
+      type: DataTypes.STRING,
+    },
+    status: {
+      type: DataTypes.STRING,
+    },
     friend_id: {
       type: DataTypes.INTEGER,
       references: {
