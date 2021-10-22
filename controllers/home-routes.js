@@ -4,9 +4,6 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) =>{
     try {
-        // const userData = await User.findAll();
-        
-        // const userAll = userData.map((user) => user.get({ plain: true }));
 
         res.render('home', {
             logged_in: req.session.logged_in,
@@ -24,11 +21,6 @@ router.get('/search/:act', async (req, res) =>{
 
       console.log(req.params.act);
 
-
-      // const currentUserData = await User.findByPk(req.session.user_id);
-
-      // const currentUser = currentUserData.get({ plain: true });
-
       const userData = await User.findAll({
       
         include: [
@@ -36,15 +28,23 @@ router.get('/search/:act', async (req, res) =>{
           { model: Interest, through: UserInterest, as: "user_interests"},
           { model: User, through: Friends, as: "user_friends"},
         ],
-        where: {user_activities: req.params.act},
       });
 
       
       const userAll = userData.map((user) => user.get({ plain: true }));
 
-      console.log(userAll[0]["user_activities"]);
+      const filteredUsers = userAll.filter((user) => {
+        for (let i = 0; i < user["user_activities"].length; i++ ){
+          if(user["user_activities"][i].id == req.params.act){
+            return user;
+          }
+        }
+      })
 
-      res.status(200).json(userAll);
+     
+      console.log(filteredUsers);
+
+      res.status(200).json(filteredUsers);
 
   
   } catch (err) {
@@ -52,33 +52,6 @@ router.get('/search/:act', async (req, res) =>{
       res.status(500).json(err);
     } 
 })
-
-// router.get('/gen/:act', async (req, res) =>{
-//   try {
-
-//       console.log(req.params.act);
-
-//       // const currentUserData = await User.findByPk(req.session.user_id);
-
-//       // const currentUser = currentUserData.get({ plain: true });
-
-//       const userData = await User.findAll();
-      
-//       const userAll = userData.map((user) => user.get({ plain: true }));
-
-//       console.log("round 2!");
-
-//       res.render('home', {
-//       logged_in: req.session.logged_in,
-//       user_id: req.session.user_id,
-//       userAll,
-//       })
-  
-//   } catch (err) {
-//       console.log(err);
-//       res.status(500).json(err);
-//     } 
-// })
 
 
 module.exports = router;
