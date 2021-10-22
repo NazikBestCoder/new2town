@@ -1,8 +1,8 @@
 <div>
     <div>
-        <h1>my Profile</h1>
+        <h1><span id="id-number">{{id}}.) </span>my Profile</h1>
 
-        <form class="edit profile">
+        <form class="edit profile edit-profile-form">
             <div>
                 <label for="name">Full Name: {{username}}</label>
                 <input type="text"/>
@@ -18,7 +18,7 @@
             </div>
             <div>
                 <label for="location">Location:</label>
-                <input type="location" id="location-update"/>
+                <input type="location" placeholder="{{location}}" id="location-update"/>
             </div>
             <div>
                 <label for="interests">Interests:</label>
@@ -39,4 +39,4 @@
     </div>
     
 </div>
-<script src="./js/user.js"></script>
+<script src="/js/edit-profile.js"></script>

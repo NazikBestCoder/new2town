@@ -22,7 +22,7 @@ router.get('/:user_id', withAuth, async (req, res) =>{
       }
 })
 
-router.put('/:user_id', withAuth, async, (req, res) => {
+router.put('/:user_id', withAuth, async (req, res) => {
 
   try {
 
