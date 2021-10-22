@@ -24,30 +24,26 @@ router.get('/search/:act', async (req, res) =>{
 
       console.log(req.params.act);
 
+
       // const currentUserData = await User.findByPk(req.session.user_id);
 
       // const currentUser = currentUserData.get({ plain: true });
 
       const userData = await User.findAll({
+      
         include: [
-          { model: Activity, through: UserActivity, as: "user-activities"},
-          { model: Interest, through: UserInterest, as: "user-interests"},
-          { model: User, through: Friends, as: "user-friends"},
-        ]});
+          { model: Activity, through: UserActivity, as: "user_activities"},
+          { model: Interest, through: UserInterest, as: "user_interests"},
+          { model: User, through: Friends, as: "user_friends"},
+        ],
+        where: {user_activities: req.params.act},
+      });
+
       
       const userAll = userData.map((user) => user.get({ plain: true }));
 
-      console.log(userAll);
+      console.log(userAll[0]["user_activities"]);
 
-    //   res.render('partials/user-cards', {
-    //     logged_in: req.session.logged_in,
-    //     user_id: req.session.user_id,
-    //     userAll,
-    // });
-        //  res.render('partials/user-cards', {
-        // logged_in: req.session.logged_in,
-        // user_id: req.session.user_id,
-        // userAll,
       res.status(200).json(userAll);
 
   
@@ -57,32 +53,32 @@ router.get('/search/:act', async (req, res) =>{
     } 
 })
 
-router.get('/gen/:act', async (req, res) =>{
-  try {
+// router.get('/gen/:act', async (req, res) =>{
+//   try {
 
-      console.log(req.params.act);
+//       console.log(req.params.act);
 
-      // const currentUserData = await User.findByPk(req.session.user_id);
+//       // const currentUserData = await User.findByPk(req.session.user_id);
 
-      // const currentUser = currentUserData.get({ plain: true });
+//       // const currentUser = currentUserData.get({ plain: true });
 
-      const userData = await User.findAll();
+//       const userData = await User.findAll();
       
-      const userAll = userData.map((user) => user.get({ plain: true }));
+//       const userAll = userData.map((user) => user.get({ plain: true }));
 
-      console.log("round 2!");
+//       console.log("round 2!");
 
-      res.render('home', {
-      logged_in: req.session.logged_in,
-      user_id: req.session.user_id,
-      userAll,
-      })
+//       res.render('home', {
+//       logged_in: req.session.logged_in,
+//       user_id: req.session.user_id,
+//       userAll,
+//       })
   
-  } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    } 
-})
+//   } catch (err) {
+//       console.log(err);
+//       res.status(500).json(err);
+//     } 
+// })
 
 
 module.exports = router;
