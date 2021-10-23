@@ -13,9 +13,7 @@ async function generateResultCards() {
 
     if (response.ok) {
         const res = await response.json();
-        // console.log(response);
         console.log(res);
-        // console.log(res[0]["user_activities"][0]);
         gottenUsers = res
     } else {
         alert('Failed to search.');
@@ -33,7 +31,7 @@ async function generateResultCards() {
             });
             commonInterestsStr += `</ol>`
                 cardsHtml += `</div>
-          <a href="/profile/${gottenUsers[i].id}"> <div class="card border-black border-2 rounded-lg inline-block w-52 h-64 mx-5">
+          <a href="/profile/${gottenUsers[i].id}"> <div class="card top-0 border-black border-2 rounded-lg inline-block w-52 h-64 mx-5">
        <div class="container">
            <h4><b>${gottenUsers[i].username}</b></h4>
            <p>Common Interests: ${commonInterestsStr}</p>
