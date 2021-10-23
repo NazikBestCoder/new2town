@@ -15,9 +15,9 @@ router.get('/:user_id', withAuth, async (req, res) => {
             ]
         });
 
-        console.log(friendData)
+        
         const friendAll = friendData.get({ plain: true });
-
+        console.log(friendAll)
         res.render('friendslist', {friendAll,
             logged_in: req.session.logged_in,
         });
