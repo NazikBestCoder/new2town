@@ -1,21 +1,17 @@
 <div>
-   <h1><span id='id-number'>{{profile.id}}   </span>My Profile</h1>
-   <h3>Upload Avatar</h3>
-   <button id="upload_widget" class="cloudinary-button">Upload files</button>
+   <h1><span id='id-number'>{{profile.id}} .)  </span>My Profile</h1>
+  
+   <button id="upload_widget" class="cloudinary-button">Upload Profile Pic</button>
   
       
 
     <form class='edit profile edit-profile-form'>
-         <img id="uploadedImage" style="height: 200px; width: 200px" src='https://via.placeholder.com/200' id='img-preview' />
+         <img id="uploadedImage" style="width: 200px" src={{profile.photo_url}} id='img-preview' />
          <label class='file-upload-container' for='file-upload'>
          <input id='file-upload' type='file' style='display:none;' />
-          Select an Image
+          Click here to save your new profile picture: 
         </label>
        <button id="photo-button">Submit</button>
-      <div>
-        <img for='name' src={{profile.photo_url}}>
-        <input type='text' />
-      </div>
            <div>
         <label for='name'>Full Name: {{profile.username}}</label>
         <input type='text' />
@@ -38,25 +34,38 @@
       </div>
       <div>
         <label for='interests'>Interests:</label>
+        <p>
+          {{#each profile.user_interests as |inter| }}
+          {{inter.name}}
+          {{/each}}
+        </p>
         <input class='form-input' type='text' id='interests' name='interests' />
         <button id="interests-button">Submit</button>
       </div>
       <div>
         <label for='activities'>Activities:</label>
-        <input
-          class='form-input'
-          type='text'
-          id='activities'
-          name='activities'
-        />
+        <p>
+          {{#each profile.user_activities as |activ| }}
+          {{activ.name}}
+          {{/each}}
+        </p>
+            <br>
+            <select id="activity-profile-bar" name="activity-search" class="mt-4">
+            <option value="1">Stuff Your Face</option>
+            <option value="2">Get Schwasted</option>
+            <option value="3">Walk Around Trees</option>
+            <option value="4">Get Competitive</option>
+            </select>
+            <br>
+             <button id="search-act" class="hover:border-blue-200 hover:bg-gray-50 rounded w-60 h-10 border-black border-2">Submit</button>
       </div>
       <div>
         <label for='status'>Status: </label>
-        <input type='status' placeholder="Anything new? {{profile.status}}" id="status-update" />
+        <p>{{profile.status}}</p>
+        <input type='status' placeholder="Anything new?" id="status-update" />
         <button id="status-button">Submit</button>
       </div>
       <div>
-        <button type='submit'>Save Profile Changes</button>
       </div>
     </form>
   </div>

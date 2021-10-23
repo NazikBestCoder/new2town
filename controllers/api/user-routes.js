@@ -47,6 +47,49 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.get('/verification', async (req, res) => {
+  try {
+
+    res.render('verify');
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
+// router.post('/verify', async (req, res) => {
+//   try {
+//     const userData = await User.findOne({ where: { email: req.body.email } });
+//     console.log("user route check")
+//     if (!userData) {
+//       res
+//         .status(400)
+//         .json({ message: 'Incorrect email or password, please try again' });
+//       return;
+//     }
+
+//     const validPassword = await userData.checkPassword(req.body.password);
+//     console.log("user route check 2")
+//     if (!validPassword) {
+//       res
+//         .status(400)
+//         .json({ message: 'Incorrect email or password, please try again' });
+//       return;
+//     }
+//     console.log("user route check 3")
+//     req.session.save(() => {
+//       req.session.user_id = userData.id;
+//       req.session.logged_in = true;
+      
+//       res.json({ user: userData, message: 'You are now logged in!' });
+//     });
+
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
+
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
