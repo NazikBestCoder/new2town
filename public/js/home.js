@@ -5,6 +5,7 @@ const resultAreaEl = document.getElementById('results-area');
 async function generateResultCards() {
     let gottenUsers;
     const chosenAct = activitySearchBarEl.options[activitySearchBarEl.selectedIndex].value;
+    console.log(chosenAct)
     const response = await fetch(`/search/${chosenAct}`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
