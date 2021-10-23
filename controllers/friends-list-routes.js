@@ -1,20 +1,22 @@
 const router = require('express').Router();
-const { User, Interest, Activity } = require('../models');
+const { User, Interest, Activity, UserInterest, UserActivity, Friends } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/:user_id', withAuth, async (req, res) => {
 
     
     try {
 
-        const friendData = await User.findAll({
-            where: {
-               friend_id: req.session.user_id,
-            }
+        const friendData = await User.findByPk(req.session.user_id, {
+            include:[
+              { model: Activity, through: UserActivity, as: "user_activities"},
+              { model: Interest, through: UserInterest, as: "user_interests"},
+              { model: User, through: Friends, as: "user_friends"},
+            ]
         });
 
         console.log(friendData)
-        const friendAll = friendData.map((friend) => friend.get({ plain: true }));
+        const friendAll = friendData.get({ plain: true });
 
         res.render('friendslist', {friendAll,
             logged_in: req.session.logged_in,
