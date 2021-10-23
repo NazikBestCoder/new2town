@@ -38,7 +38,8 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/login');
+      alert("Please log in with your newly created credentials")
     } else {
       alert(response.statusText);
     }
