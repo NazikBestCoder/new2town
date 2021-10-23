@@ -20,6 +20,28 @@ const loginFormHandler = async (event) => {
   }
 };
 
+// const verifyFormHandler = async (event) => {
+//   event.preventDefault();
+
+//   const email = document.querySelector('#email-login').value.trim();
+//   const password = document.querySelector('#password-login').value.trim();
+
+//   if (email && password) {
+//     const response = await fetch('/api/users/verify', {
+//       method: 'POST',
+//       body: JSON.stringify({ email, password }),
+//       headers: { 'Content-Type': 'application/json' },
+//     });
+
+//     if (response.ok) {
+//       document.location.replace('/');
+//     } else {
+//       console.log(response);
+//       alert('Failed to log in');
+//     }
+//   }
+// };
+
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
@@ -38,13 +60,14 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/login');
+      document.location.replace('/signup');
       alert("Please log in with your newly created credentials")
     } else {
       alert(response.statusText);
     }
   }
 };
+
 
 
 
@@ -55,3 +78,7 @@ document
 document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
+  
+// document
+//   .querySelector('.verify-form')
+//   .addEventListener('submit', verifyFormHandler);

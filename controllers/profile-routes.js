@@ -136,7 +136,6 @@ router.post('/active/:user_id', withAuth, async (req, res) => {
       res.status(404).json({ message: 'No user activity with this id!' });
       return;
     }
-    console.log("status hit")
 
     res.status(200).json(profileData);
 

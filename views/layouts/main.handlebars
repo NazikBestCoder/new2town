@@ -14,7 +14,7 @@
             class="hover:bg-red-400 hover:shadow-inner rounded-lg w-full lg:w-24 h-12"
             >Home</button></a>
         {{#if logged_in}}
-          <a href="/profile/"{{user_id}}><button
+          <a href="/profile/{{user_id}}"><button
               class="hover:bg-red-400 hover:shadow-inner rounded-lg  w-full lg:w-24 h-12"
             >Profile</button></a>
           <a href="/friendslist/friend/{{user_id}}"><button
