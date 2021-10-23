@@ -1,21 +1,17 @@
 <div>
-   <h1><span id='id-number'>{{profile.id}}   </span>My Profile</h1>
-   <h3>Upload Avatar</h3>
-   <button id="upload_widget" class="cloudinary-button">Upload files</button>
+   <h1><span id='id-number'>{{profile.id}} .)  </span>My Profile</h1>
+  
+   <button id="upload_widget" class="cloudinary-button">Upload Profile Pic</button>
   
       
 
     <form class='edit profile edit-profile-form'>
-         <img id="uploadedImage" style="height: 200px; width: 200px" src='https://via.placeholder.com/200' id='img-preview' />
+         <img id="uploadedImage" style="width: 200px" src={{profile.photo_url}} id='img-preview' />
          <label class='file-upload-container' for='file-upload'>
          <input id='file-upload' type='file' style='display:none;' />
-          Select an Image
+          Click here to save your new profile picture: 
         </label>
        <button id="photo-button">Submit</button>
-      <div>
-        <img for='name' src={{profile.photo_url}}>
-        <input type='text' />
-      </div>
            <div>
         <label for='name'>Full Name: {{profile.username}}</label>
         <input type='text' />

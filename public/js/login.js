@@ -26,11 +26,12 @@ const signupFormHandler = async (event) => {
   const username = document.querySelector('#name-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
+  const photo_url = "https://res.cloudinary.com/nazik/image/upload/v1635007175/pguvcqxflaaq340ahley.png"
 
-  if (username && email && password) {
+  if (username && email && password && photo_url) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ username, email, password }),
+      body: JSON.stringify({ username, email, password, photo_url }),
       headers: { 'Content-Type': 'application/json' },
     });
 

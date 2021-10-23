@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Interest, Activity, UserInterest, UserActivity, Friends } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/:user_id', withAuth, async (req, res) => {
+router.get('/friend/:user_id', withAuth, async (req, res) => {
 
     
     try {
