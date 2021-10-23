@@ -96,7 +96,6 @@ router.put('/status/:user_id', withAuth, async (req, res) => {
       res.status(404).json({ message: 'No user with this id!' });
       return;
     }
-    console.log("status hit")
 
     res.status(200).json("Success");
 
@@ -125,16 +124,21 @@ router.post('/interest/:user_id', withAuth, async (req, res) => {
 });
 
 
-router.get('/active/:id', withAuth, async (req, res) => {
+router.post('/active/:user_id', withAuth, async (req, res) => {
   try {
 
-    const profileData = await Activity.findByPk(req.params.id)
+    const profileData = await UserActivity.create({
+      user_id: req.session.user_id,
+      activity_id: req.body.activity_id,
+    });
 
-    const activity = profileData.get({ plain: true });
+    if (!profileData) {
+      res.status(404).json({ message: 'No user activity with this id!' });
+      return;
+    }
+    console.log("status hit")
 
-    res.render('myprofile', {activity,
-      logged_in: req.session.logged_in,
-  });
+    res.status(200).json(profileData);
 
   } catch (err) {
     res.status(500).json(err);

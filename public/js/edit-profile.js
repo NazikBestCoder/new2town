@@ -113,9 +113,8 @@ const addInterest = async (event) => {
 
 }
 
-
-
 interestBtnEl.addEventListener("click", addInterest)
+
 
 // Activity
 const activitySearchBarEl = document.getElementById('activity-profile-bar');
@@ -124,12 +123,16 @@ const addActivity = async (event) => {
     event.preventDefault();
 
 
-    const id = activitySearchBarEl.options[activitySearchBarEl.selectedIndex].value;
+    const activity_id = activitySearchBarEl.options[activitySearchBarEl.selectedIndex].value;
 
-    if (id) {
-        const response = await fetch(`/profile/active/${id}`, {
-            method: 'GET',
+    console.log("hello", activity_id)
 
+    if (activity_id) {
+        const response = await fetch(`/profile/active/${user_id}`, {
+            method: 'POST',
+            body: JSON.stringify({
+                activity_id,
+            }),
 
             headers: { 'Content-Type': 'application/json' },
         });
