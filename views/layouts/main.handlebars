@@ -7,7 +7,7 @@
     <title>New2Town</title>
   </head>
   <body>
-    <header class="h-28 w-screen">
+    <header class="h-28 w-screen isolate">
       <nav class=" bg-red-300 bg-opacity-75 flex justify-left flex-col md:flex-row space-x-4">
           <h1 class="font-bold text-white text-4xl text-center p-8">New2Town</h1>
             <a href="/"><button
@@ -18,7 +18,7 @@
               class="hover:bg-red-400 hover:shadow-inner rounded-lg  w-full lg:w-24 h-12"
             >Profile</button></a>
           <a href="/friendslist/friend/{{user_id}}"><button
-              class="hover:bg-red-400 hover:shadow-inner rounded-lg w-24 h-12"
+              class="hover:bg-red-400 hover:shadow-inner rounded-lg w-full lg:w-24 w-24 h-12"
 
             >Friends List</button></a>
           <a><button
@@ -33,7 +33,7 @@
       </nav>
 
     </header>
-    <main>
+    <main class="p-64  md:p-16 w-screen">
       {{{body}}}
     </main>
 
