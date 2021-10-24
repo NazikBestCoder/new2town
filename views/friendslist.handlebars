@@ -3,7 +3,7 @@
 {{#each friendAll.user_friends as |friend|}}
 
 
-          <a href="/profile/${gottenUsers[i].id}"> <div class="card border-black border-2 rounded-lg inline-block w-52 h-64 mx-5">
+          <a href="/profile/${gottenUsers[i].id}"> <div class="card border-black border-2 hover:border-yellow-300 rounded-lg inline-block w-52 h-64 mx-5">
        <div class="container">
            <img style="width: 100px" src={{friend.photo_url}}>
            <h4><b>{{friend.username}}</b></h4>
