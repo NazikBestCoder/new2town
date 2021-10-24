@@ -20,6 +20,7 @@ router.get('/friend/:user_id', withAuth, async (req, res) => {
         console.log(friendAll)
         res.render('friendslist', {friendAll,
             logged_in: req.session.logged_in,
+            user_id: req.session.user_id,
         });
     
     } catch (err) {
