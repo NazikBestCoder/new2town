@@ -28,7 +28,7 @@ const signupFormHandler = async (event) => {
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
   const photo_url = "https://res.cloudinary.com/nazik/image/upload/v1635007175/pguvcqxflaaq340ahley.png"
-  const interests = document.querySelector('#interest-signup').value.trim();
+  // const interests = document.querySelector('#interest-signup').value.trim();
   const location = document.querySelector('#location-signup').value.trim();
 
   if (username && email && password && location && photo_url) {
@@ -42,7 +42,7 @@ const signupFormHandler = async (event) => {
       document.location.replace('/signup');
       alert("Please verify your info")
     } else {
-      alert(response.statusText, "Please fill out the entire form!");
+      alert(response.statusText,  "Please fill out the entire form!");
     }
   }
 };
