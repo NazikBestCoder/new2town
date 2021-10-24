@@ -3,43 +3,50 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/style2.css" />
     <title>New2Town</title>
   </head>
   <body>
     <header class="h-28 w-screen isolate">
       <nav class=" bg-red-300 bg-opacity-75 flex justify-left flex-col md:flex-row space-x-4">
-          <h1 class="font-bold text-white text-4xl text-center p-8">New2Town</h1>
+          <h1 class="font-bold text-white text-4xl text-center p-8" id="main-header">New2Town</h1>
             <a href="/"><button
-            class="hover:bg-red-400 hover:shadow-inner rounded-lg w-full lg:w-24 h-12"
+            class="nav-hover hover:shadow-inner rounded-lg w-full lg:w-24 h-12"
             >Home</button></a>
         {{#if logged_in}}
           <a href="/profile/{{user_id}}"><button
-              class="hover:bg-red-400 hover:shadow-inner rounded-lg  w-full lg:w-24 h-12"
+              class="nav-hover hover:shadow-inner rounded-lg  w-full lg:w-24 h-12"
             >Profile</button></a>
           <a href="/friendslist/friend/{{user_id}}"><button
-              class="hover:bg-red-400 hover:shadow-inner rounded-lg w-full lg:w-24 w-24 h-12"
+              class="nav-hover hover:shadow-inner rounded-lg w-full lg:w-24 w-24 h-12"
 
             >Friends List</button></a>
           <a><button
             id="logout"
-            class="hover:bg-red-400 hover:shadow-inner rounded-lg w-full lg:w-24 h-12" 
+            class="nav-hover hover:shadow-inner rounded-lg w-full lg:w-24 h-12" 
           >Logout</button></a>
         {{else}}
           <a href="/login"><button
-              class=" hover:bg-red-400 hover:shadow-inner rounded-lg w-full lg:w-24 h-12"
+              class="nav-hover hover:shadow-inner rounded-lg w-full lg:w-24 h-12"
             >Login</button></a>
         {{/if}}
       </nav>
 
     </header>
-    <main class="p-64  md:p-16">
+    <main class="p-72  md:p-16 h-auto">
       {{{body}}}
     </main>
 
-    <footer class="bg-red-200 relative inset-x-0 bottom-0 p-8">
+    {{!-- <footer>
       <p class="text-center text-white">&copy; Joseph Fisher, Nazik Askarbekkyzy, Aidan Rich, Molly Singmaster</p>
-    </footer>
+    </footer> --}}
 
     {{#if logged_in}}
       <script src="/js/logout.js"></script> 

@@ -1,53 +1,47 @@
 <div>
-   <h1 class="text-3xl py-3 text-yellow-300"><p hidden id='id-number'>{{profile.id}}</p>My Profile</h1>
+   <h1 class="text-3xl py-3 text-yellow-300 pb-12"><p hidden id='id-number'>{{profile.id}}</p>{{profile.username}}'s Profile</h1>
   
-   <button id="upload_widget" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Upload Pic</button>
-   
-    <form class='edit profile edit-profile-form'>
-         <img id="uploadedImage" style="width: 200px" src={{profile.photo_url}} id='img-preview' />
+      <div class="pb-12">
+         <img id="uploadedImage" style="width: 200px" src={{profile.photo_url}} id='img-preview'/>
          <label class='file-upload-container' for='file-upload'>
          <input id='file-upload' type='file' style='display:none;' />
+         <button id="upload_widget" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Upload Pic</button>
+         <br>
           Click here to save your new profile picture: 
         </label>
-       <button id="photo-button" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Submit</button>
-           <div>
-        <label for='name'><strong>Name:</strong> {{profile.username}}</label>
-        <input type='text' />
-      </div>
-      <div>
-        <label for='email-login'><strong>Email:</strong> {{profile.email}}</label>
-        <input type='text' />
-      </div>
+       <button id="photo-button" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Save</button>
+       </div>
       
       
       
-      <div>
-        <label for='location'>Update Location:</label>
+      <div class="pb-12">
+        <label for='location'><strong>Location:</strong></label>
+        <p>{{profile.location}}</p>
         <input
           type='location'
-          placeholder='{{profile.location}}'
+          placeholder='Enter a new city'
           id='location-update'
-          class="form-input border pr-4"
+          class="form-input border p-3"
         />
-        <button id="location-button" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Submit</button>
+        <button id="location-button" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Update</button>
       </div>
-      <div>
+      <div class="pb-12">
         <label for='interests'><strong>Interests:</strong></label>
-        <p>
+        <ol>
           {{#each profile.user_interests as |inter| }}
-          {{inter.name}},
+          <li>{{inter.name}}</li>
           {{/each}}
-        </p>
-        <input class='form-input border p-3' type='text' id='interests' name='interests' />
-        <button id="interests-button" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Submit</button>
+        </ol>
+        <input class='form-input border p-3' placeholder="What do you like?" type='text' id='interests' name='interests' />
+        <button id="interests-button" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Update</button>
       </div>
-      <div>
+      <div class="pb-12"> 
         <label for='activities'><strong>Activities:</strong></label>
-        <p>
+        <ol>
           {{#each profile.user_activities as |activ| }}
-          {{activ.name}},
+          <li>{{activ.name}}</li>
           {{/each}}
-        </p>
+        </ol>
            
          <select id="activity-profile-bar" name="activity-search" class="mt-4 form-input border p-3">
          <option value="1">Stuff Your Face</option>
@@ -55,20 +49,19 @@
          <option value="3">Walk Around Trees</option>
          <option value="4">Get Competitive</option>
          </select>
-         <button id="search-act" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Submit</button>
+         <button id="search-act" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Update</button>
       </div>
 
 
-      <div>
+      <div class="pb-12">
         
-        <label for='status'>Status: </label>
+        <label for='status'><strong>Status:</strong> </label>
         <p>{{profile.status}}</p>
-        <input type='status' placeholder="Anything new?" id="status-update" class="form-input border pr-4"/>
-        <button id="status-button" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Submit</button>
+        <input type='status' placeholder="Anything new?" id="status-update" class="form-input border p-3"/>
+        <button id="status-button" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Update</button>
       </div>
       <div>
       </div>
-    </form>
   </div>
 
 </div>

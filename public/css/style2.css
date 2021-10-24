@@ -1,0 +1,37 @@
+body {
+    font-family: 'Arimo', sans-serif;
+    background-color: #fbf9ef;
+    position: relative;
+}
+
+#main-header {
+    font-family: 'Lobster', cursive;
+    color: #fbf9ef;
+}
+
+.bg-red-300 {
+    background-color: #a5b0ea;
+}
+
+.nav-hover {
+    color: #fbf9ef;
+}
+
+.nav-hover:hover {
+    background-color: #6174d9;
+}
+
+.text-yellow-300 {
+    color: #6174d9;
+}
+
+.card {
+    min-width: 205px;
+}
+
+footer {
+    background-color: #a5b0ea;
+    height: 50px;
+    margin-top: 50px;
+    position: relative;
+}
