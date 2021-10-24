@@ -1,11 +1,14 @@
 <div class="w-full h-full flex justify-center">
-<h2 class="text-3xl p-8 text-yellow-300">Friends List:</h2>
-{{#each friendAll as |friend|}}
+<h2 class="text-3xl p-8 text-yellow-300">{{friendAll.username}}'s Friend List:</h2>
+{{#each friendAll.user_friends as |friend|}}
+
 
           <a href="/profile/${gottenUsers[i].id}"> <div class="card border-black border-2 rounded-lg inline-block w-52 h-64 mx-5">
        <div class="container">
+           <img style="width: 100px" src={{friend.photo_url}}>
            <h4><b>{{friend.username}}</b></h4>
-           <p>Interests: film, cooking, politics</p>
+           <p>{{friend.email}}</p>
+           <p>{{friend.location}}</p>
       </div> </div> </a>
        
 {{/each}}

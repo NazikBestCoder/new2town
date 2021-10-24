@@ -41,6 +41,9 @@ User.init(
     status: {
       type: DataTypes.STRING,
     },
+    photo_url: {
+      type: DataTypes.STRING,
+    },
     friend_id: {
       type: DataTypes.INTEGER,
       references: {
