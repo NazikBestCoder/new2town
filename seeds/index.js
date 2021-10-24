@@ -3,7 +3,7 @@ const seedUser = require('./userData')
 const seedInterest = require('./interestData');
 const seedActivities = require('./activityData');
 const seedUserActivity = require('./userActivityData');
-const seedUserInterest = require('./userInterestData');
+const seedUserInterest = require('./UserInterestData');
 const seedFriends = require('./FriendsData');
 
 const seedAll = async () => {
