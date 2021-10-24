@@ -1,10 +1,8 @@
 <div>
-   <h1 class="text-3xl py-3 text-yellow-300"><span id='id-number'>{{profile.id}}.)</span> My Profile</h1>
+   <h1 class="text-3xl py-3 text-yellow-300"><p hidden id='id-number'>{{profile.id}}</p>My Profile</h1>
   
-   <button id="upload_widget" class="cloudinary-button">Upload Profile Pic</button>
-  
-    
-
+   <button id="upload_widget" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Upload Pic</button>
+   
     <form class='edit profile edit-profile-form'>
          <img id="uploadedImage" style="width: 200px" src={{profile.photo_url}} id='img-preview' />
          <label class='file-upload-container' for='file-upload'>
@@ -13,7 +11,7 @@
         </label>
        <button id="photo-button" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Submit</button>
            <div>
-        <label for='name'><strong>Full Name:</strong> {{profile.username}}</label>
+        <label for='name'><strong>Name:</strong> {{profile.username}}</label>
         <input type='text' />
       </div>
       <div>

@@ -1,10 +1,9 @@
 # new2town
 ## Description
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+- To showcase our skills with creating a fullstack application we developed New2Town.
+- New2Town is a functional yet simple social media app focused one finding new people to be friends with in your area (Note: this is not a dating app).
+- If you have recently moved to a new area sometimes it can be hard to make local friends. New2Town is an app dedicated to finding people who can help you explore your new home.
+- We learned a lot about the MVC framework and how to use routes to manage a mysql database.
 ## Table of Contents (Optional)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -14,22 +13,24 @@ Provide a short description explaining the what, why, and how of your project. U
 ## Installation
 
 ## Usage
+- If you clone this repo you will need to run 'npm i' to install the relevant npm packages.
+- There is a live build at https://polar-garden-81010.herokuapp.com/login
 
-   ```md
-   ![alt text](assets/images/screenshot.png)
-   ```
 ## Credits
+- principle dev team includes Joey Fisher, Molly Singmaster, Nazik Askarbekkyzy and Aidan Rich.
+- Images are hosted by Cloudinary.
 
 ## License
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+- MIT License
+
+Copyright (c) [2021] [Aidan Rich, Joey Fisher, Molly Singmaster, Nazik Askarbekkyzy]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Badges
 ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-## Features
-If your project has a lot of features, list them here.
-## How to Contribute
 
-## Tests
-
-## Questions 
