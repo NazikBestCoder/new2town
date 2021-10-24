@@ -61,7 +61,7 @@ async function generateResultCards() {
       cardsHtml += `</div>
          <div class="card top-0 border-black border-2 rounded-lg inline-block w-52 h-64 mx-5">
        <div class="container">
-       <a href="/profile/${gottenUsers[i].id}"><h4><b>${gottenUsers[i].username}</b></h4></a>
+       <a href="/profile/other/${gottenUsers[i].id}"><h4><b>${gottenUsers[i].username}</b></h4></a>
        <img style="width: 100px" src="${gottenUsers[i].photo_url}"
            <p>Common Interests: ${commonInterestsStr}</p>
            <button id="friend-btn-${gottenUsers[i].id}" class="friend-btn hover:border-blue-200 hover:bg-gray-50 rounded w-40 h-10 border-black border-2">Add Friend!</button>
