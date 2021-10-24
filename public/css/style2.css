@@ -1,7 +1,10 @@
 body {
     font-family: 'Arimo', sans-serif;
     background-color: #fbf9ef;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #main-header {
