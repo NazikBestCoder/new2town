@@ -23,7 +23,7 @@ async function addFriend(id) {
         const res = await response.json();
         console.log(res);
       } else {
-        alert('Failed to add friend.');
+        alert("You're already friends");
       }
     });
   }}
