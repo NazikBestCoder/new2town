@@ -87,18 +87,28 @@ router.get('/search/:act', async (req, res) => {
   }
 })
 
-router.post('/friend', withAuth, async (req, res) => {
+router.post('/friend/:id', withAuth, async (req, res) => {
   try {
+    console.log(req.params.id);
+    console.log(req.session.user_id);
     const friendData = await Friends.create({
       user_id: req.session.user_id,
-      friend_id: req.body.friend_id,
+      friend_id: req.params.id,
     });
 
-    if (!friendData) {
+    const friendDataRec = await Friends.create({
+      user_id: req.params.id,
+      friend_id: req.session.user_id,
+    });
+
+    console.log("here!!!");
+  
+    if (!friendData || !friendDataRec ) {
       res.status(404).json({ message: 'No user with this id!' });
       return;
     }
-    res.status(200).json(friendData);
+    console.log("FRIEND ADDED!");
+    res.status(200).json("i");
 
   } catch (err) {
     res.status(500).json(err);
