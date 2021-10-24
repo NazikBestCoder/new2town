@@ -2,7 +2,7 @@
    <h1 class="text-3xl py-3 text-yellow-300"><span id='id-number'>{{profile.id}}.)  </span>My Profile</h1>
    <button id="upload_widget" class="cloudinary-button rounded w-40 h-13 border-black border-2">Upload Profile Pic</button>
   
-      
+    
 
     <form class='edit profile edit-profile-form'>
          <img id="uploadedImage" style="width: 200px" src={{profile.photo_url}} id='img-preview' />
@@ -49,20 +49,20 @@
           {{activ.name}},
           {{/each}}
         </p>
-            <br>
-            <select id="activity-profile-bar" name="activity-search" class="mt-4 form-input border p-3">
-              <option value="1">Stuff Your Face</option>
-              <option value="2">Get Schwasted</option>
-              <option value="3">Walk Around Trees</option>
-              <option value="4">Get Competitive</option>
-            </select>
-            <br>
-            <br>
-             <button id="search-act" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Submit</button>
+           
+         <select id="activity-profile-bar" name="activity-search" class="mt-4 form-input border p-3">
+         <option value="1">Stuff Your Face</option>
+         <option value="2">Get Schwasted</option>
+         <option value="3">Walk Around Trees</option>
+         <option value="4">Get Competitive</option>
+         </select>
+         <button id="search-act" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Submit</button>
       </div>
+
+
       <div>
-        <br>
-        <label for='status'><strong>Status:</strong> </label>
+        
+        <label for='status'>Status: </label>
         <p>{{profile.status}}</p>
         <input type='status' placeholder="Anything new?" id="status-update" class="form-input border pr-4"/>
         <button id="status-button" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Submit</button>
@@ -82,18 +82,15 @@
         {
           cloudName: cloudName,
           uploadPreset: uploadPreset,
-
         },
           
         (error, result) => {
           if (!error && result && result.event === "success") {
             console.log("Done! Here is the image info: ", result.info);
             document.getElementById("uploadedImage").setAttribute("src", result.info.secure_url);
-
           }
         }
       );
-
       document.getElementById("upload_widget").addEventListener(
         "click",
         function () {
@@ -106,5 +103,4 @@
 
 
 
- 
    
