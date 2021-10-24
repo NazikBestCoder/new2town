@@ -1,5 +1,10 @@
-<div class="w-full h-full flex justify-center">
-<h2 class="text-3xl p-8 text-yellow-300">{{friendAll.username}}'s Friend List:</h2>
+<div class="w-full h-full flex justify-center flex-wrap">
+    <div class="block w-full">
+<h2 class="text-3xl p-8 text-yellow-300 text-center">{{friendAll.username}}'s Friend List:</h2>
+</div>
+
+<div class="flex flex-wrap mt-8">
+
 {{#each friendAll.user_friends as |friend|}}
 
 
@@ -13,6 +18,8 @@
       </div> </div> </a>
        
 {{/each}}
+
+</div>
 
 </div>
 
