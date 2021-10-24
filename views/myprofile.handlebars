@@ -1,9 +1,16 @@
 <div>
+<<<<<<< HEAD
    <h1 class="text-3xl py-3 text-yellow-300"><p hidden id='id-number'>{{profile.id}}</p>My Profile</h1>
   
    <button id="upload_widget" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Upload Pic</button>
   
       
+=======
+   <h1 class="text-3xl py-3 text-yellow-300"><span id='id-number'>{{profile.id}}.)  </span>My Profile</h1>
+   <button id="upload_widget" class="cloudinary-button rounded w-40 h-13 border-black border-2">Upload Profile Pic</button>
+  
+    
+>>>>>>> 6808f02b297c7aa624ab565bc81d087a5ea58714
 
     <form class='edit profile edit-profile-form'>
          <img id="uploadedImage" style="width: 200px" src={{profile.photo_url}} id='img-preview' />
@@ -13,7 +20,7 @@
         </label>
        <button id="photo-button" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Submit</button>
            <div>
-        <label for='name'><strong>Full Name:</strong> {{profile.username}}</label>
+        <label for='name'><strong>Name:</strong> {{profile.username}}</label>
         <input type='text' />
       </div>
       <div>
@@ -50,19 +57,19 @@
           {{activ.name}},
           {{/each}}
         </p>
-            <br>
-            <select id="activity-profile-bar" name="activity-search" class="mt-4 form-input border p-3">
-              <option value="1">Stuff Your Face</option>
-              <option value="2">Get Schwasted</option>
-              <option value="3">Walk Around Trees</option>
-              <option value="4">Get Competitive</option>
-            </select>
-            <br>
-            <br>
-             <button id="search-act" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Submit</button>
+           
+         <select id="activity-profile-bar" name="activity-search" class="mt-4 form-input border p-3">
+         <option value="1">Stuff Your Face</option>
+         <option value="2">Get Schwasted</option>
+         <option value="3">Walk Around Trees</option>
+         <option value="4">Get Competitive</option>
+         </select>
+         <button id="search-act" class="hover:border-blue-200 hover:bg-gray-50 rounded w-24 h-10 border-black border-2">Submit</button>
       </div>
+
+
       <div>
-        <br>
+        
         <label for='status'>Status: </label>
         <p>{{profile.status}}</p>
         <input type='status' placeholder="Anything new?" id="status-update" class="form-input border pr-4"/>
@@ -83,18 +90,15 @@
         {
           cloudName: cloudName,
           uploadPreset: uploadPreset,
-
         },
           
         (error, result) => {
           if (!error && result && result.event === "success") {
             console.log("Done! Here is the image info: ", result.info);
             document.getElementById("uploadedImage").setAttribute("src", result.info.secure_url);
-
           }
         }
       );
-
       document.getElementById("upload_widget").addEventListener(
         "click",
         function () {
@@ -107,5 +111,4 @@
 
 
 
- 
    
