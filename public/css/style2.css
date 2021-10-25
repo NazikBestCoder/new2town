@@ -30,6 +30,16 @@ body {
 
 .card {
     min-width: 205px;
+    background-color: #a5b0ea;
+}
+
+.friend-btn {
+    margin-bottom: 5px;
+    background-color: #fbf9ef;
+}
+
+.card-pic {
+    border: #fbf9ef solid 2px;
 }
 
 footer {
@@ -37,4 +47,9 @@ footer {
     height: 50px;
     margin-top: 50px;
     position: relative;
+}
+
+.card-interests {
+    color: #fbf9ef;
+    
 }

@@ -1,18 +1,28 @@
-<div class="w-full h-full flex justify-center">
-<h2 class="text-3xl p-8 text-yellow-300">{{friendAll.username}}'s Friend List:</h2>
+<div class="w-full h-full flex justify-center flex-wrap">
+    <div class="block w-full">
+<h2 class="text-3xl p-8 text-yellow-300 text-center">{{friendAll.username}}'s Friend List:</h2>
+</div>
+
+<div class="flex flex-wrap mt-8 justify-center items-center">
+
 {{#each friendAll.user_friends as |friend|}}
 
 
-          <a href="/profile/other/{{friend.id}}"> <div class="card border-black border-2 hover:border-yellow-300 rounded-lg inline-block w-52 h-64 mx-5">
-       <div class="container">
-           <img style="width: 100px" src={{friend.photo_url}}>
-           <h4><b>{{friend.username}}</b></h4>
+          <a href="/profile/other/{{friend.id}}"> <div class="card border-black border-2 hover:border-yellow-300 rounded-lg inline-block w-52 h-64 m-5">
+       <div class="container flex justify-center items-center flex-col">
+           <br>
+              <h4><b>{{friend.username}}</b></h4>
+              <br>
+           <img style="width: 100px" class="card-pic" src={{friend.photo_url}}>
+           <br>
            <p>{{friend.email}}</p>
            <p>{{friend.location}}</p>
            <p>{{friend.status}}</p>
       </div> </div> </a>
        
 {{/each}}
+
+</div>
 
 </div>
 
