@@ -2,6 +2,11 @@
    <h1 class="text-3xl py-3 text-yellow-300"><p hidden id='id-number'>{{profile.id}}</p> {{profile.username}}'s Profile</h1>
          <img id="uploadedImage" style="width: 200px" src={{profile.photo_url}} id='img-preview' />
      <br>
+     
+      <div class="pb-12">
+        <p><strong>Status: </strong>{{profile.status}}</p>
+      </div>
+
       <div class="pb-12">
         <p><strong>Email:</strong> <a href="mailto:{{profile.email}}" class="underline text-blue-600">{{profile.email}}</a></p>
       </div>
@@ -29,9 +34,7 @@
       </div>
 
 
-      <div>
-        <p>{{profile.status}}</p>
-      </div>
+
       <div>
       </div>
   </div>
